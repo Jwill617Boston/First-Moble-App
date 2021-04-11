@@ -10,7 +10,7 @@ import { Card } from 'react-native-elements';
     render() {
         return (
             <ScrollView>
-                <Card featuredTitle={"Contact Information"} wrapperStyle={{margin: 20}}>
+                <Card title={"Community Partners"} wrapperStyle={{margin: 20}}>          
                     <Text style={{marginBottom: 10}}>
                     1 Nucamp Way
                     Seattle, WA 98001
