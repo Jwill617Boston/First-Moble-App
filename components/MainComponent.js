@@ -4,14 +4,25 @@ import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
-import { View, Platform } from 'react-native';
+import { View, Platform, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createAppContainer } from 'react-navigation';
+import { Icon } from 'react-native-elements';
 
 const DirectoryNavigator = createStackNavigator(
     {
-        Directory: { screen: Directory },
+        Directory: { screen: Directory,
+            defaultNavigationOptions: ({navigation}) => ({
+                headerLeft: 
+                    <Icon
+                        name='list'
+                        type='font-awesome'
+                        iconStyle={style.stackIcon}
+                        onPress={() => navigation.toggleDrawer}
+                     />
+            })        
+        },
         CampsiteInfo: { screen: CampsiteInfo }
     },
     {
