@@ -192,6 +192,20 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
+        Reservation: {
+            screen: ReservationNavigator,
+            navigationOptions: {
+                drawerLabel: 'Reserve Campsite',
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='tree'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            },
+        },
         About: {
             screen: AboutNavigator,
             navigationOptions: {
