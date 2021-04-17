@@ -3,6 +3,11 @@ import { View, Platform, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createAppContainer } from 'react-navigation';
+import Directory from './DirectoryComponent';
+import CampsiteInfo from './CampsiteInfoComponent';
+import Home from './HomeComponent';
+import Contact from './ContactComponent';
+import About from './AboutComponent';
 import { Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { fetchCampsites, fetchComments, fetchPromotions,

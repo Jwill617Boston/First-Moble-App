@@ -11,7 +11,7 @@ const mapStateToProps = state => {
     };
 };
 
-function Mission (props) {
+function Mission () {
     return (
         <Card title={"Our Mission"}>
             <Text style={{margin: 10}}>
@@ -43,7 +43,7 @@ function Mission (props) {
 
         return (
             <ScrollView>                
-                <Mission partners={this.state.partners}/>
+                <Mission />
                 <Card title={"Community Partners"}>
                 <FlatList
                 data={this.props.partners.partners}

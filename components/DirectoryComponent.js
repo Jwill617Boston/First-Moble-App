@@ -7,7 +7,7 @@ import { baseUrl } from '../shared/baseUrl';
 
 const mapStateToProps = state => {
     return {
-        partners: state.campsites
+        campsites: state.campsites
     };
 };
 
@@ -26,7 +26,7 @@ class Directory extends Component {
                     caption={item.description}
                     featured
                     onPress={() => navigate('CampsiteInfo', { campsiteId: item.id })}
-                    leftAvatar={{uri: baseUrl + item.image}}
+                    imageSrc={{uri: baseUrl + item.image}}
                 />
             );
         };
