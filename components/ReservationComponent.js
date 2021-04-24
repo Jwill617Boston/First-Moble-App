@@ -16,7 +16,7 @@ class Reservation extends Component {
         };
     }
 
-    st atic navigationOptions = {
+    static navigationOptions = {
         title: 'Reserve Campsite'
     }
 
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     },
     formItem: {
         flex: 1
-    }
+    },
     modal: { 
         justifyContent: 'center',
         margin: 20
