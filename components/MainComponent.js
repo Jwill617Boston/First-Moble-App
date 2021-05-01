@@ -9,12 +9,35 @@ import Home from './HomeComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
 import Favorites from './FavoritesComponent';
+import Login from './LoginComponent';
 import { Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { fetchCampsites, fetchComments, fetchPromotions, fetchPartners } from '../redux/ActionCreators';
 import Reservation from './ReservationComponent';
 import SafeAreaView from 'react-native-safe-area-view';
 
+const LoginNavigator = createStackNavigator(
+    {
+        Login: { screen: Login }
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='sign-in'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);
 
 const mapDispatchToProps = {
     fetchCampsites,
@@ -202,6 +225,19 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
+        Login: {
+            screen: LoginNavigator,
+            navigationOptions: {
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='sign-in'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },
         Directory: {
             screen: DirectoryNavigator,
             navigationOptions: {
@@ -272,10 +308,11 @@ const MainNavigator = createDrawerNavigator(
             }
         }
     },
-        {
-            drawerBackgroundColor: '#CEC8FF',
-            contentComponent: CustomDrawerContentComponent
-        }
+    {
+        initialRouteName: 'Home',
+        drawerBackgroundColor: '#CEC8FF',
+        contentComponent: CustomDrawerContentComponent
+    }
     
 );
 
