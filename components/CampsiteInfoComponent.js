@@ -39,14 +39,6 @@ function RenderCampsite(props) {
                     reverse 
                     onPress= {() => props.favorite ? console.log('Already set as favorite') :  props.markFavorite()}               
                 />
-                 <Icon 
-                    name={props.favorite ? 'heart' : 'heart-o'}
-                    type='font-awesome'
-                    color='#5637DD'
-                    raised
-                    reverse 
-                    onPress={() => props.onShowModal()}               
-                />
             </Card>
         );
     }
